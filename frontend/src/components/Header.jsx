@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import lightLogo from "/src/assets/images/logo/1.png";
+import darkLogo from "/src/assets/images/logo/2.png";
 
 function Header() {
   return (
@@ -14,12 +16,12 @@ function Header() {
               <a href="/" title="" class="">
                 <img
                   class="block w-auto h-8 dark:hidden"
-                  src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full.svg"
+                  src={lightLogo}
                   alt=""
                 />
                 <img
                   class="hidden w-auto h-8 dark:block"
-                  src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full-dark.svg"
+                  src={darkLogo}
                   alt=""
                 />
               </a>
