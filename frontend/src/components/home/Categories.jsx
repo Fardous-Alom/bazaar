@@ -11,21 +11,21 @@ function Categories() {
   }, []);
 
   return (
-    <section class="bg-gray-50 py-8 antialiased dark:bg-gray-900 md:py-16">
-      <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
-        <div class="mb-4 flex items-center justify-between gap-4 md:mb-8">
-          <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
+    <section className="bg-gray-50 py-8 antialiased dark:bg-gray-900 md:py-16">
+      <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
+        <div className="mb-4 flex items-center justify-between gap-4 md:mb-8">
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
             Shop by category
           </h2>
 
           <a
             href="#"
             title=""
-            class="flex items-center text-base font-medium text-primary-700 hover:underline dark:text-gray-500"
+            className="flex items-center text-base font-medium text-primary-700 hover:underline dark:text-gray-500"
           >
             See more categories
             <svg
-              class="ms-1 h-5 w-5"
+              className="ms-1 h-5 w-5"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -35,31 +35,31 @@ function Categories() {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M19 12H5m14 0-4 4m4-4-4-4"
               />
             </svg>
           </a>
         </div>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {data.map((category) => (
             <a
               key={category.id}
               href="#"
-              class="flex items-center rounded-lg border border-gray-200 bg-white p-4 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors"
+              className="flex items-center rounded-lg border border-gray-200 bg-white p-4 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors"
             >
               <img
                 src={category.image}
                 alt={category.name}
-                className="w-12 h-12 object-cover rounded-md mr-3"
+                classNameName="w-12 h-12 object-cover rounded-md mr-3"
                 onError={(e) => {
-                  e.target.src = 'https://via.placeholder.com/48';
+                  e.target.src = "https://via.placeholder.com/48";
                 }}
               />
-              <span class="text-sm font-medium text-gray-900 dark:text-white">
+              <span className="text-sm font-medium text-gray-900 dark:text-white">
                 {category.name}
               </span>
             </a>
