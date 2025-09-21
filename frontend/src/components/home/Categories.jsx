@@ -21,7 +21,7 @@ function Categories() {
           <a
             href="#"
             title=""
-            className="flex items-center text-base font-medium text-primary-700 hover:underline dark:text-gray-500"
+            className="flex items-center text-base font-medium text-blue-700 hover:underline dark:text-gray-500"
           >
             See more categories
             <svg
@@ -49,14 +49,22 @@ function Categories() {
             <a
               key={category.id}
               href="#"
-              className="flex items-center rounded-lg border border-gray-200 bg-white p-4 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors"
+              className="flex items-center rounded-lg border border-gray-200 bg-white p-4 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors cursor-pointer "
             >
               <img
-                src={category.image}
+                src={
+                  category.image && !category.image.includes("placeimg.com")
+                    ? category.image
+                    : `https://placehold.co/48x48/cccccc/666666?text=${encodeURIComponent(
+                        category.name.substring(0, 2).toUpperCase()
+                      )}`
+                }
                 alt={category.name}
-                classNameName="w-12 h-12 object-cover rounded-md mr-3"
+                className="w-12 h-12 object-cover rounded-md mr-3"
                 onError={(e) => {
-                  e.target.src = "https://via.placeholder.com/48";
+                  e.target.src = `https://placehold.co/48x48/cccccc/666666?text=${encodeURIComponent(
+                    category.name.substring(0, 2).toUpperCase()
+                  )}`;
                 }}
               />
               <span className="text-sm font-medium text-gray-900 dark:text-white">

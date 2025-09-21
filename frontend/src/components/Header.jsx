@@ -1,12 +1,14 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import lightLogo from "/src/assets/images/logo/1.png";
 import darkLogo from "/src/assets/images/logo/2.png";
 
 function Header() {
   const navigate = useNavigate();
+  const cartItems = useSelector((state) => state.cart);
   return (
-    <header className="bg-white dark:bg-gray-800 antialiased">
+    <header className="bg-white dark:bg-gray-800 antialiased sticky top-0 z-50">
       <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
@@ -31,7 +33,7 @@ function Header() {
                 <Link
                   to="/"
                   title=""
-                  className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
+                  className="flex text-sm font-medium text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-500"
                 >
                   Home
                 </Link>
@@ -40,7 +42,7 @@ function Header() {
                 <Link
                   to="/best-sellers"
                   title=""
-                  className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
+                  className="flex text-sm font-medium text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-500"
                 >
                   Best Sellers
                 </Link>
@@ -49,7 +51,7 @@ function Header() {
                 <Link
                   to="/gift-ideas"
                   title=""
-                  className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
+                  className="flex text-sm font-medium text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-500"
                 >
                   Gift Ideas
                 </Link>
@@ -58,7 +60,7 @@ function Header() {
                 <Link
                   to="/today-deals"
                   title=""
-                  className="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
+                  className="text-sm font-medium text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-500"
                 >
                   Today's Deals
                 </Link>
@@ -67,7 +69,7 @@ function Header() {
                 <Link
                   to="/shop"
                   title=""
-                  className="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
+                  className="text-sm font-medium text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-500"
                 >
                   Shop
                 </Link>
@@ -80,12 +82,13 @@ function Header() {
               id="myCartDropdownButton1"
               data-dropdown-toggle="myCartDropdown1"
               type="button"
-              className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
+              className="relative inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
               onClick={() => {
                 navigate("/cart");
               }}
             >
               <span className="sr-only">Cart</span>
+
               <svg
                 className="w-5 h-5 lg:me-1"
                 aria-hidden="true"
@@ -103,7 +106,14 @@ function Header() {
                   d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
                 />
               </svg>
-              <span className="hidden sm:flex">My Cart</span>
+              <span className="hidden sm:flex">
+                My Cart
+                {cartItems.length > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-sky-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                    {cartItems.length}
+                  </span>
+                )}
+              </span>
             </button>
 
             <div
@@ -358,7 +368,7 @@ function Header() {
               <a
                 href="#"
                 title=""
-                className="mb-2 me-2 inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                className="mb-2 me-2 inline-flex w-full items-center justify-center rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 role="button"
               >
                 {" "}
@@ -522,7 +532,7 @@ function Header() {
             <li>
               <a
                 href="/"
-                className="hover:text-primary-700 dark:hover:text-primary-500"
+                className="hover:text-blue-700 dark:hover:text-blue-500"
               >
                 Home
               </a>
@@ -530,7 +540,7 @@ function Header() {
             <li>
               <a
                 href="#"
-                className="hover:text-primary-700 dark:hover:text-primary-500"
+                className="hover:text-blue-700 dark:hover:text-blue-500"
               >
                 Best Sellers
               </a>
@@ -538,7 +548,7 @@ function Header() {
             <li>
               <a
                 href="#"
-                className="hover:text-primary-700 dark:hover:text-primary-500"
+                className="hover:text-blue-700 dark:hover:text-blue-500"
               >
                 Gift Ideas
               </a>
@@ -546,7 +556,7 @@ function Header() {
             <li>
               <a
                 href="#"
-                className="hover:text-primary-700 dark:hover:text-primary-500"
+                className="hover:text-blue-700 dark:hover:text-blue-500"
               >
                 Games
               </a>
@@ -554,7 +564,7 @@ function Header() {
             <li>
               <a
                 href="#"
-                className="hover:text-primary-700 dark:hover:text-primary-500"
+                className="hover:text-blue-700 dark:hover:text-blue-500"
               >
                 Electronics
               </a>
@@ -562,7 +572,7 @@ function Header() {
             <li>
               <a
                 href="#"
-                className="hover:text-primary-700 dark:hover:text-primary-500"
+                className="hover:text-blue-700 dark:hover:text-blue-500"
               >
                 Home & Garden
               </a>

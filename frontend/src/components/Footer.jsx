@@ -499,7 +499,7 @@ function Footer() {
                 <a
                   href="#"
                   title=""
-                  className="text-base font-medium text-primary-700 underline hover:no-underline dark:text-primary-500"
+                  className="text-base font-medium text-blue-700 underline hover:no-underline dark:text-blue-500"
                 >
                   {" "}
                   Sign In or Create Account{" "}
@@ -518,7 +518,7 @@ function Footer() {
                         Get the latest deals and more.{" "}
                       </label>
                       <input
-                        className="block w-full rounded-lg border border-gray-300 bg-white p-3 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:w-96 lg:w-full"
+                        className="block w-full rounded-lg border border-gray-300 bg-white p-3 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 sm:w-96 lg:w-full"
                         placeholder="Enter your email address"
                         type="email"
                         id="email"
@@ -528,7 +528,7 @@ function Footer() {
                     <div>
                       <button
                         type="submit"
-                        className="w-full cursor-pointer rounded-lg bg-primary-700 px-5 py-3 text-center text-sm font-medium text-white hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        className="w-full cursor-pointer rounded-lg bg-blue-700 px-5 py-3 text-center text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                       >
                         Subscribe
                       </button>
